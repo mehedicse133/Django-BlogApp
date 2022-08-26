@@ -1,0 +1,17 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-5">
+            <img style="height: 350px; width:400px" src="{{post.image}}" alt="">
+        </div>
+        <div class="col-lg-6">
+            <h5>{{post.title}}</h5>
+            <p>{{post.content}}</p>
+            <small>{{post.crated_at}} / <span>Author :<strong> {{post.user}}</strong></span></small>
+            <p>Category : {{post.category.name}}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

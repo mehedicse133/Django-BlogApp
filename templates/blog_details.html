@@ -13,5 +13,25 @@
             <p>Category : {{post.category.name}}</p>
         </div>
     </div>
+    <hr>
+    <h4>Comments..</h4>
+    {% for comment in post.comments.all %}
+    <p>
+        <strong>{{comment.name}}</strong><small> {{comment.crated_at}}</small>
+        <br>
+        {{comment.description}}
+    </p>
+    {% empty %}
+    <p>No comment yet!</p>
+    {% endfor%}
+    <hr>
+    <p>Leave comment ...</p>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-success">Submit</button>
+    </form>
+
+
 </div>
 {% endblock %}
